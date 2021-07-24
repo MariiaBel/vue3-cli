@@ -1,9 +1,9 @@
 export const process = {
-    dev: true, 
+    prod: true,
 }
 
 export const site = {
-    home: process.dev ? '/' : 'https://wwwpage.ru/'
+    home: process.prod ? '/vue3-cli/dist/' : '/'
 }
 
 export const links= [
