@@ -3,5 +3,6 @@ module.exports = {
         ? ''
         : '/',
     productionSourceMap: false,
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    filenameHashing: false //не работает Ж(
 }
