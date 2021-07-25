@@ -7,7 +7,12 @@
             class="cards">
             <slide v-for="item in items" :key="item.id">
                 <Card :item="item" :more=true class="cards__item">
-                    <span class="cards__text" v-html="item.desc"></span>
+                    <template v-slot:body>
+                        <span class="cards__text" v-html="item.desc"></span>
+                    </template>
+                    <template v-slot:footer>
+                        <Records class="cards__record" :records="item.records" />
+                    </template>
                 </Card>
             </slide>
 
@@ -20,12 +25,14 @@
 
 <script>
 import Card from '@/components/UI/Card.vue'
+import Records from '../components/UI/Records.vue'
 import items from'@/seeders/persons.js'
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 export default {
     components: {
         Card,
+        Records,
         Carousel,
         Slide,
         Pagination,
@@ -76,11 +83,12 @@ export default {
             display: -webkit-box !important
             -webkit-line-clamp: 2
             -webkit-box-orient: vertical
-    .carousel 
+        &__record
+            margin: 20px 0
+    .carousel
         --carousel-color-primary: var(--c-accent)
         --carousel-color-secondary: gray
         &__pagination-button
             height: 10px
             padding: 5px
-            box-sizing: content-box
-            </style>
+            box-sizing: content-box            </style>

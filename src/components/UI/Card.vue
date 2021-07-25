@@ -5,9 +5,10 @@
         </picture>
         <h2 class="card__title">{{ item.name }}</h2>
         
-        <slot></slot>
+        <slot name="body"></slot>
         
-        <!-- <a v-if="more" class="card__link" :href="item.alias">More >></a> -->
+        <slot name="footer"></slot>
+        
         <router-link 
             v-if="more" 
             class="card__link" 
@@ -20,7 +21,6 @@
             :to="{name: 'home'}">
             Back >>
         </router-link>
-
     </section>
 </template>
 
@@ -45,6 +45,9 @@ export default {
             width: 100%
             height: 400px
             display: block
+            border-radius: 7px
+            overflow: hidden
+            box-shadow: grey 0px 0px 20px
             img
                 object-fit: cover
                 width: 100%

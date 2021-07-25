@@ -1,0 +1,2 @@
+RewriteEngine on
+ErrorDocument 404 https://mariiabel.github.io/vue3-cli/dist/404

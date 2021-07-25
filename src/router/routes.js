@@ -11,6 +11,11 @@ export const routes = [
         component: HomePage
     },
     {
+        path: `${site.home}404`,
+        name: '404',
+        component: Err404Page
+    },
+    {
         path: `${site.home}about`,
         name: 'about',
         component: AboutPage
@@ -21,8 +26,7 @@ export const routes = [
         component: PersonPage
     },
     {
-        path: `${site.home}:CatchAll(.*)`,
-        name: 'error404',
-        component: Err404Page
+        path: `${site.home}:CatchAll(.*)*`,
+        redirect: { name: '404' }
     }
 ]
