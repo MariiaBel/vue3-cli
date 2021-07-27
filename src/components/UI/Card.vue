@@ -48,6 +48,7 @@ export default {
             border-radius: 7px
             overflow: hidden
             box-shadow: grey 0px 0px 20px
+            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%)
             img
                 object-fit: cover
                 width: 100%
