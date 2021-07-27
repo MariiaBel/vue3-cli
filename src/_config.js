@@ -3,7 +3,7 @@ export const process = {
 }
 
 export const site = {
-    home: process.prod ? '/vue3-cli/dist/' : '/'
+    home: process.prod ? '/vue3-cli/public/' : '/'
 }
 
 export const links= [
