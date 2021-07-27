@@ -13,7 +13,6 @@
 <script>
 import persons from '@/seeders/persons.js'
 import Card from '@/components/UI/Card.vue'
-import { routes } from '@/router/routes.js'
 
 export default {
     components: {
@@ -27,8 +26,12 @@ export default {
     created() {
         const alias = this.$route.params.personAlias
         const person = persons.find(item => item.alias === alias)
-        const Err404Route = routes.find(item => item.name === '404')
-        if(!person) window.location.href= Err404Route.path
+        // if(!person) window.location.href= Err404Route.path
+        if(!person) {
+            this.$router.push({
+                name: '404'
+            })
+        }
         this.person = person
     }
 }
